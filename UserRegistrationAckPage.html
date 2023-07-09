@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAP | User Registered</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 18px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            background-color: rgb(1, 36, 38);
+            width: 100%;
+            height: 80px;
+            padding: 10px 0;
+            justify-content: space-between;
+        }
+        .navbar img {
+            padding: 0 8px;
+            border-radius: 50%;
+        }
+        .nav-image {
+            margin-left: 24px;
+        }
+        .nav-menu {
+            margin-right: 48px;
+            margin-top: -10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .nav-menu-center {
+            display: flex;
+        }
+        .menu-item {
+            margin: 0 18px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 234, 238);
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .background {
+            width: 100%;
+            height: 100vh;
+            margin: 0 !important;
+            left: 0;
+            top: 0;
+            background-color: rgb(5, 178, 220);
+            /* background: linear-gradient(to top right, rgba(2, 0, 36, 1) 0%, rgb(48, 48, 148) 10%, rgba(0, 212, 255, 1) 100%); */
+        }
+        .container {
+            padding: 20px 0;
+            padding-bottom: 30px;
+            width: 55vw;
+            min-width: 450px;
+            background-color: rgb(15, 60, 90);
+            color: rgb(255, 234, 238);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 16px;
+            box-shadow: -3px 3px 18px rgb(129, 160, 171);
+
+        }
+        .form {
+            width: 24vw;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 6px;
+        }
+        .form-input {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .container .status {
+            color: greenyellow;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .form button {
+            font-size: 16px;
+            background-color: rgb(255, 234, 238);
+            outline: none;
+            border: none;
+            padding: 8px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .select-none {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .btn {
+            text-decoration: none;
+            color: black;
+            background-color: rgb(255, 234, 238);
+            padding: 4px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: rgb(216, 200, 204);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="navbar">
+            <div class="nav-image">
+                <img src="https://i.ibb.co/m566Lbz/J-A-P.png" alt="logo.png" height="100%"/>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-menu-center">
+                    <div class="menu-item"><a href="#">About</a></div>
+                    <div class="menu-item"><a href="#">Contact Us</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="status">
+                Customer Registration Successful
+            </div>
+            <form class="form">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-input">
+                                <span>Customer ID</span>
+                                <span class="select-none">&nbsp;:&nbsp;&nbsp;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-input">
+                                <span class="select-none">&nbsp;</span>
+                                <span id="custid"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input">
+                                <span>Customer Name</span>
+                                <span class="select-none">&nbsp;:&nbsp;&nbsp;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-input">
+                                <span class="select-none">&nbsp;</span>
+                                <span id="name"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input">
+                                <span>Customer Email</span>
+                                <span class="select-none">&nbsp;:&nbsp;&nbsp;</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-input">
+                                <span class="select-none">&nbsp;</span>
+                                <span id="email"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="select-none"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr class="select-none"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr class="select-none"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <a class="btn" href='UserLoginPage.html'>Login</a>
+                        </td>
+                        <td style="text-align: center;">
+                            <a class="btn" href='UserRegistrationPage.html'>Register</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script>
+        window.onload = (e) => {
+            if(!localStorage.getItem("name") && !localStorage.getItem("email")) {
+                alert("please register your account!");
+                window.location.href = "UserRegistrationPage.html";
+            }
+            var custIdField = document.getElementById("custid")
+            var nameField = document.getElementById("name")
+            var emailField = document.getElementById("email")
+            var name = localStorage.getItem("name")
+            var email = localStorage.getItem("email")
+            var custId = Math.round(Math.random() * (99999 - 10000) + 10000)
+            custIdField.innerHTML = "S"+custId
+            nameField.innerHTML = name
+            emailField.innerHTML = email
+            localStorage.setItem("custId", "S"+custId)
+        }
+    </script>
+</body>
+</html>
